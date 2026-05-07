@@ -4,7 +4,7 @@ public class GlowStoneSeal implements PackageSeal{
 	@Override
     public String apply(String label) {
         if (label == null) throw new NullPointerException();
-        return "◆ " + label + " ◆";
+        return " " + label + " ";
     }
 
     @Override
