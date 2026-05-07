@@ -19,17 +19,16 @@ public class OwlScrollNotificationAdapter implements NotificationChannel {
             throw new NullPointerException("DeliveryPlan cannot be null");
         }
 
-        // The test expects "Sky Kingdom" instead of "SKY"
+        
         String recipient = formatRealmName(plan.getRequest().getDestinationRealm());
         
-        // Use the summary() method we created in DeliveryPlan
         String inscription = plan.summary();
 
         return owlScroll.dispatchScroll(recipient, inscription);
     }
 
     private String formatRealmName(RealmType realm) {
-        // Simple mapping to match the test expectation of "Sky Kingdom"
+        
         return switch (realm) {
             case SKY -> "Sky Kingdom";
             case UNDERDARK -> "Underdark";
